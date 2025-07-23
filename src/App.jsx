@@ -1,23 +1,33 @@
-import { useState } from "react";
 import "./App.css";
+import TabPanel from "./TabPanel";
 
 function App() {
-  const [tab, setTab] = useState(1);
+  const tabs = [
+    {
+      label: "Tab 1",
+      content: "tab 1 content",
+    },
+    {
+      label: "Tab 2",
+      content: "tab 2 content",
+    },
+    {
+      label: "Tab 3",
+      content: "tab 3 content",
+    },
+    {
+      label: "Tab 4",
+      content: "tab 4 content",
+    },
+    {
+      label: "Tab 5",
+      content: "tab 5 content",
+    },
+  ];
   return (
     <>
       <h1>Tabs Component with react</h1>
-      <div>
-        <button onClick={() => setTab(1)}>Tab 1</button>
-        <button onClick={() => setTab(2)}>Tab 2</button>
-        <button onClick={() => setTab(3)}>Tab 3</button>
-        <button onClick={() => setTab(4)}>Tab 4</button>
-      </div>
-      <div>
-        <p className={tab === 1 ? "" : "hidden"}>tab 1 content</p>
-        <p className={tab === 2 ? "" : "hidden"}>tab 2 content</p>
-        <p className={tab === 3 ? "" : "hidden"}>tab 3 content</p>
-        <p className={tab === 4 ? "" : "hidden"}>tab 4 content</p>
-      </div>
+      <TabPanel tabs={tabs} />
     </>
   );
 }
