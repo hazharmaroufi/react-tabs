@@ -1,35 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [tab, setTab] = useState(1);
   return (
     <>
+      <h1>Tabs Component with react</h1>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <button onClick={() => setTab(1)}>Tab 1</button>
+        <button onClick={() => setTab(2)}>Tab 2</button>
+        <button onClick={() => setTab(3)}>Tab 3</button>
+        <button onClick={() => setTab(4)}>Tab 4</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div>
+        <p className={tab === 1 ? "" : "hidden"}>tab 1 content</p>
+        <p className={tab === 2 ? "" : "hidden"}>tab 2 content</p>
+        <p className={tab === 3 ? "" : "hidden"}>tab 3 content</p>
+        <p className={tab === 4 ? "" : "hidden"}>tab 4 content</p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
